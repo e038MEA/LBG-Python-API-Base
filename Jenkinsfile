@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        GCR_CREDENTIALS_ID = 'Week3_Project' // The ID you provided in Jenkins credentials
+        GCR_CREDENTIALS_ID = 'week3-project' // The ID you provided in Jenkins credentials
         IMAGE_NAME = 'test-build-emmanuel'
         GCR_URL = 'europe-west1-docker.pkg.dev/lbg-mea-20/gcr-week3project-emmanuel'
     }
@@ -16,9 +16,9 @@ pipeline {
                     // Configure Docker to use gcloud as a credential helper
                     sh 'gcloud auth configure-docker --quiet'
                     // Build the Docker image
-                    sh "docker build -t ${GCR_URL}/${IMAGE_NAME}:latest ."
+                    sh "docker build -t ${GCR_URL}/${IMAGE_NAME}:${BUILD_NUMBER} ."
                     // Push the Docker image to GCR
-                    sh "docker push ${GCR_URL}/${IMAGE_NAME}:latest"
+                    sh "docker push ${GCR_URL}/${IMAGE_NAME}:${BUILD_NUMBER}"
                 }
             }
         }
