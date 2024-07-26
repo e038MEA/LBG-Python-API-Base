@@ -1,4 +1,4 @@
-apiVersion: v1
+ apiVersion: v1
 kind: Service
 metadata:
   name: flask-service
@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: flask-container
-        image: europe-west1-docker.pkg.dev/lbg-mea-20/gcr-week3project-emmanuel/test-build-emmanuel:latest
+        image: gcr.io/europe-west1-docker.pkg.dev/lbg-mea-20/gcr-week3project-emmanuel/test-build-emmanuel:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
