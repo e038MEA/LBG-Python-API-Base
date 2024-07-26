@@ -3,7 +3,7 @@ pipeline {
     environment {
         GCR_CREDENTIALS_ID = 'week3-project' // The ID you provided in Jenkins credentials
         IMAGE_NAME = 'test-build-emmanuel'
-        GCR_URL = 'europe-west1-docker.pkg.dev/lbg-mea-20/gcr-week3project-emmanuel'
+        GCR_URL = 'gcr.io/europe-west1-docker.pkg.dev/lbg-mea-20/gcr-week3project-emmanuel'
 	PROJECT_ID = 'lbg-mea-20'
         CLUSTER_NAME = 'cluster-lab1-week3'
         LOCATION = 'europe-west2-c'
